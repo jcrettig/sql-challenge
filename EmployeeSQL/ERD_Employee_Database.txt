@@ -1,3 +1,18 @@
+ERD_Employee_Database
+-
+titles
+-
+title_id VARCHAR PK
+title VARCHAR
+# 7 unique emp_title_id
+
+
+departments
+-
+dept_no VARCHAR PK
+dept_name VARCHAR
+# 9 unique dept_no
+
 employees
 -
 emp_no INTEGER PK 
@@ -14,20 +29,9 @@ salaries
 -
 emp_no INTEGER FK - employees.emp_no
 salary INTEGER
-id SERIAL PK
+(emp_no, salary) PK
 # 30024 unique emp_no
 
-titles
--
-title_id VARCHAR PK
-title VARCHAR
-# 7 unique emp_title_id
-
-departments
--
-dept_no VARCHAR PK
-dept_name VARCHAR
-# 9 unique dept_no
 
 dept_emp
 -
@@ -46,8 +50,6 @@ emp_no INTEGER FK - employees.emp_no
 (dept_no, emp_no) PK
 # 9 unique dept_no, each row is assigned a dept_no
 # 24 unique emp_no (a department may be assigned multiple dept_manager)
-
-
 
 
 
